@@ -17,9 +17,8 @@ function getWeather() {
   axios
     .get(url)
     .then(res => {
-      weatherInfo.value = res.data;
+      weatherInfo.value = res.data.list;
       error.value = null;
-      console.log(res.data);
     })
     .catch(err => (error.value = err.message));
 }
